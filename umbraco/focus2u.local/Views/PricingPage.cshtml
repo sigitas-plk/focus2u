@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.PricingPage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "MasterPage.cshtml";
+}
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+          <h1 class="mdl-typography--display-1">@CurrentPage.Name</h1>
+        </div>
+    </div>
+
+@CurrentPage.GetGridHtml("grd", "GrdBase")

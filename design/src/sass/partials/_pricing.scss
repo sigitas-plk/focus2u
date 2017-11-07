@@ -1,0 +1,66 @@
+//.f2u-pricing.featured
+//.f2u-pricing--title Party Planning
+//.f2u-pricing--subtitle
+//.f2u-pricing--price
+//span.mdl-typography--display-2 999
+//| dkk
+//p.f2u-pricing--description best value
+//ul.f2u-pricing--features
+//li.f2u-pricing--feature some very long features
+
+$background: $layout-drawer-border-color;
+.f2u-pricing{
+  $padding: 8px;
+  @include shadow-2dp();
+  &:hover {
+    @include shadow-4dp();
+  }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-color:#fff;
+  &--title{
+    @include typo-title;
+    padding:  $padding;
+  }
+  &--price{
+    padding:  $padding*2  $padding $padding $padding;
+    background: $background;
+
+    &-amount{
+      @include typo-display-2;
+      font-weight:200;
+    }
+    &-currency{
+      @include typo-subhead;
+    }
+  }
+  &--description {
+    @include typo-caption;
+    background: $background;
+    padding-bottom: 8px;
+  }
+}
+ul.f2u-pricing--features {
+  text-align: left;
+  list-style-type: none;
+  position: relative;
+  & > li:before {
+    content: "";
+    position: absolute;
+    margin: 10px 0 0 -20px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    background: $background;
+  }
+}
+
+
+
+

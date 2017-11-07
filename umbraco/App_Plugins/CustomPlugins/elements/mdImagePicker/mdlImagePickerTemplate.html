@@ -1,0 +1,20 @@
+<div>
+    <div ng-show="ngModel==null">
+        <a class="btn" ng-click="vm.pickAImage()">Pick Image</a>
+    </div>
+    <div ng-hide="ngModel == null">
+        <img src="{{ngModel.thumbnail}}"/>
+        <div>
+            <a href class="btn"
+               ng-click="vm.pickAImage()">
+                Change Image
+                <span style="color:rgb(83, 169, 63)" class="icon icon-reply-arrow"></span>
+            </a>
+            <a href class="btn"
+               ng-click="vm.deleteImage()">
+                Remove Image
+                <span class="icon icon-delete red"></span>
+            </a>
+        </div>
+    </div>
+</div>

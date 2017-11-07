@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+    @using te2u.lib.Models;
+@using Newtonsoft.Json.Linq
+@{
+    string subject = Model.MacroParameters["subject"] as string;
+    string reciever = Model.MacroParameters["recieverEmail"] as string;
+
+    dynamic selectOptions = (!String.IsNullOrEmpty(Model.MacroParameters["courses"].ToString())) ?
+          Json.Decode((dynamic)HttpUtility.HtmlDecode(Model.MacroParameters["courses"].ToString())) : null;
+
+    string options = "";
+
+    //var courseList = new List<string>();
+
+    foreach (var o in selectOptions)
+    {
+        options += o + ';';
+
+    }
+
+    Html.RenderAction("RenderContactForm", "PlaceOrderFormSurface", new { reciever, subject, options });
+}

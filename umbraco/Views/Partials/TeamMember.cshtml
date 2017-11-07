@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+    <div class="mdl-grid">
+        
+            <div class="mdl-cell mdl-cell--12-col">
+                <h2 class="mdl-typography--title f2u-team">@Umbraco.Field(Model, "employee")</h2>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--4-col-phone">
+                @{
+                    var img = Model.GetPropertyValue<IPublishedContent>("picture");
+                    var name = img.Name.Substring(0, img.Name.IndexOf("."));
+
+                }
+                <img class="f2u-team--picture"
+                     src="@img.Url"
+                     alt="@name" />
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet f2u-team--description ">
+                @Umbraco.Field(Model, "description")
+            </div>
+        </div>
+        

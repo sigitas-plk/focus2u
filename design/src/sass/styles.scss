@@ -1,0 +1,69 @@
+//@font-face {
+//  font-family: 'Oswald';
+//  src: url('fonts/Oswald/Oswald-Light.ttf');
+//  src: url('fonts/Oswald/Oswald-Bold.ttf');
+//  src: url('fonts/Oswald/Oswald-Medium.ttf');
+//  src: url('fonts/Oswald/Oswald-Regular.ttf');
+//  src: url('fonts/Oswald/Oswald-SemiBold.ttf');
+//  src: url('fonts/Oswald/Oswald-ExtraLight.ttf');
+//}
+//
+//@font-face {
+//  font-family: 'Lato';
+//  src: url('fonts/Lato/Lato-Regular.ttf');
+//  src: url('fonts/Lato/Lato-Black.ttf');
+//  src: url('fonts/Lato/Lato-Bold.ttf');
+//  src: url('fonts/Lato/Lato-Hairline.ttf');
+//  src: url('fonts/Lato/Lato-Light.ttf');
+//}
+
+@import 'libs/mdl/material-design-lite';
+@import 'partials/landingPage';
+@import "partials/aboutUs";
+@import 'partials/pricing';
+@import 'partials/blogRepo';
+@import 'partials/blogPost';
+
+.mdl-grid{
+  max-width: 1000px;
+}
+.f2u-logo{
+  height: 100px;
+  width: 100px;
+}
+.f2u-logo--nav{
+  height: 50px;
+  width: 50px;
+}
+figure.f2u-logo--nav{
+  height: 50px;
+  background: no-repeat center;
+  background-size: contain;
+}
+figure.f2u-logo{
+  height: 100px;
+  background: no-repeat center;
+  background-size: contain;
+}
+
+
+//.f2u-landing-page{
+//  position: fixed;
+//  width: 100%;
+//  height: 100%;
+//  left: 0;
+//  top: 0;
+// // background: rgba(51,51,51,0.7);
+//  //z-index: 10;
+//}
+
+/* Responsive Images */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*Contact Form Error message visibility*/
+#contact-form .mdl-textfield__error {
+  visibility: visible;
+}

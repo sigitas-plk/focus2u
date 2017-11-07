@@ -1,0 +1,38 @@
+//$background: unquote("rgba(#{$palette-grey-300}, 0.5)") !default
+//$background: unquote("rgba(#{$color-black}, 0.54)")!default;
+.blogpost {
+  &--header{
+    @include shadow-2dp();
+    position: relative;
+   // overflow: hidden;
+   // text-align: center;
+    &-title{
+      //margin-top: 0;
+      //min-width: 100%;
+      //position: absolute;
+      //bottom: 0;
+      //margin-bottom: 0;
+      margin-top: 0;
+
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: absolute;
+      bottom: 0;
+      border-radius: 2px;
+      padding: 16px 64px;
+      box-sizing: border-box;
+      background: rgba(224, 224, 224, 0.8);
+      @include typo-display-1;
+
+    }
+    &-image{
+      max-height: 350px;
+    }
+  }
+}
+
+h1.blogpost--header-title{
+  margin: 16px;
+}

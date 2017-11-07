@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Event>
+    @using ContentModels = Umbraco.Web.PublishedContentModels;
+    @{
+    Layout = "MasterPage.cshtml";
+    }
+
+    <div class="mdl-grid blogpost">
+        <div class="mdl-cell mdl-cell--12-col">
+
+            @if (CurrentPage.featuredImage != null && !CurrentPage.hideFeatured)
+            {
+            <div class="blogpost--header">
+                <h1 class="blogpost--header-title">
+                    @CurrentPage.Name
+                </h1>
+                <img class="blogpost--header-image" src="@CurrentPage.GetCropUrl("featuredImage", "Event Description Image" )" />
+            </div>
+            }else{
+            <h1 class="mdl-typography--display-1">
+                @CurrentPage.Name
+            </h1>
+            }
+
+        </div>
+    </div>
+
+    <div class="blogpost--body">
+        @CurrentPage.GetGridHtml("grd", "GrdBase")
+    </div>
+

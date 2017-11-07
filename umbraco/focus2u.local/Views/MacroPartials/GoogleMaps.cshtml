@@ -1,0 +1,60 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    //defaults
+    string lng = "12.549170499999946";
+    string lat = "55.7155974";
+    string key = "AIzaSyBcnCLCvko9Kr13o9lGARZrcXNsjif09Xs";
+    string height = "400";
+    string zoom = "15";
+
+    //razor vars
+    lng = Model.MacroParameters["gLongitude"] as string;
+    lat = Model.MacroParameters["gLatitude"] as string;
+    height = Model.MacroParameters["gHeight"] as string;
+    zoom = Model.MacroParameters["gZoom"] as string;
+}
+@if (string.IsNullOrEmpty(key)) {
+<h4>Please configure <strong>api key</strong> in macro parameters</h4>
+}
+else if (string.IsNullOrEmpty(lng))
+{
+    <h4>Please configure <strong>Longitude</strong> in macro parameters</h4>
+}
+else if (string.IsNullOrEmpty(lat))
+{
+    <h4>Please configure <strong>Latitude</strong> in macro parameters</h4>
+}
+else if (string.IsNullOrEmpty(height))
+{
+    <h4>Please configure <strong>Map height</strong> in macro parameters</h4>
+}
+else if (string.IsNullOrEmpty(height))
+{
+    <h4>Please configure <strong>Map zoom level</strong> in macro parameters</h4>
+}
+else
+{
+    <div id="map" style="width: 100%; height:@(height)px;">
+    </div>
+    <script>
+
+        function myMap() {
+                var map = new google.maps.Map(document.getElementById('map'),{
+                zoom:@zoom,
+                center: {lat:@lat, lng:@lng},
+                mapTypeControl:true,
+                zoomControl: true
+            });
+
+            var marker = new google.maps.Marker({
+                position:{lat:@lat, lng:@lng},
+                map: map,
+                icon:'https://chart.googleapis.com/chart?chst=d_bubble_text_small&chld=bbbr|focus2u|9E9E9E|000000'});
+
+            
+    }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=@(key)&callback=myMap"></script>
+}
+

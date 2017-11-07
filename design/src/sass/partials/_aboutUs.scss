@@ -1,0 +1,18 @@
+.mdl-typography--title.f2u-team{
+  margin-top: 0;
+}
+
+.f2u-team .mdl-typography--display-1{
+
+margin-bottom: 0;
+}
+
+.f2u-team--description{
+  //padding: 8px;
+
+}
+
+.f2u-team--picture{
+ // margin: 8px 0;
+  @include shadow-2dp();
+}

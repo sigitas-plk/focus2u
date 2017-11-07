@@ -1,0 +1,22 @@
+html
+    head
+        link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet" href="css/styles.css")
+        script(src="https://code.getmdl.io/1.3.0/material.min.js")
+    body
+        .f2u-layout-transparent.mdl-layout.mdl-js-layout
+            -var links =["Products","Pricing","About Us","Contact Us"];
+            header.mdl-layout__header.mdl-layout__header--transparent
+                .mdl-layout__header-row
+                    .mdl-layout-title
+                    .mdl-layout-spacer
+                    nav.mdl-navigation
+                        for link in links
+                            a(href="").mdl-navigation__link #{link}
+            .mdl-layout__drawer
+                .mdl-layout-title
+                    img(src="img/src/logo.png").f2u-logo
+                nav.mdl-navigation
+                    for link in links
+                        a(href="").mdl-navigation__link #{link}
+

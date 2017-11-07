@@ -1,0 +1,17 @@
+﻿@{
+    string heading = string.Format("Thank you {0}", TempData["Name"]);
+    string body = "We have recieved your booking. We will get back to you as soon as we can.";
+
+    if (TempData["Error"] != null)
+    {
+        heading = "Ooops! Something went wrong";
+        body = "Currently we are experiencing technical difficulties with our mail servers. Please try again later or contact us via phone.";
+    }
+
+    <h2 class="mdl-typography--title">
+    @heading</h2>
+    <p class="mdl-typography--subhead">
+    @body
+    </p>
+}
+

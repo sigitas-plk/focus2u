@@ -1,0 +1,42 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+
+
+
+<div class="f2u-pricing">
+
+    @if (Model.title != null)
+    {
+        <div class="f2u-pricing--title">
+            @Model.title
+        </div>
+    }
+    <div class="f2u-pricing--price">
+        @if (Model.price != null)
+            {
+            <span class="f2u-pricing--price-amount">
+                @Model.price
+            </span>
+        }
+        @if (Model.currency != null)
+            {
+            <span class="f2u-pricing--price-currency">
+                @Model.currency
+            </span>
+        }
+    </div>
+
+    <span class="f2u-pricing--description">
+        @Model.description
+    </span>
+
+    <ul class="f2u-pricing--features">
+
+        @foreach (var feature in Model.features)
+        {
+            <li class="pricing-table--feature">
+                @feature
+            </li>
+        }
+
+    </ul>
+</div>

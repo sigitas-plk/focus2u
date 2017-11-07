@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.EventRepo>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "MasterPage.cshtml";
+}
+
+
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <h1 class="mdl-typography--display-1">@CurrentPage.Name</h1>
+            </div>
+
+            @foreach (var post in CurrentPage.Children.Reverse())
+            {
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="blogpost-card">
+                        @if (post.FeaturedImage != null)
+                {
+                            <div class="blogpost-card--img-container">
+                                <img src="@post.GetCropUrl("featuredImage", "Event Card Image")"
+                                     class="blogpost-card--img" />
+                            </div>
+                        }
+                        <h2 class="mdl-typography--title blogpost-card--title">@post.Name</h2>
+                        <p class="blogpost-card--body">@Umbraco.Truncate(post.Summary, 240, true)</p>
+
+                        <div class="blogpost-card--action">
+                            <a href="@post.Url" class="mdl-button mdl-button--primary">
+                                More details..
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>

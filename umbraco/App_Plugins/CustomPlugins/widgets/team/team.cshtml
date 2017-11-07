@@ -1,0 +1,31 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+
+<div class="mdl-grid">
+    @if (Model.name != null)
+    {
+        <div class="mdl-cell mdl-cell--12-col">
+            <h2 class="mdl-typography--title f2u-team">@Model.name </h2>
+        </div>
+    }
+
+    @if (Model.image != null)
+    {
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--4-col-phone">
+            <img class="f2u-team--picture" src="@Model.image.url" alt="@Model.image.name" />
+        </div>
+    }
+
+    @if (Model.description != null)
+    {
+
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet f2u-team--description">
+            <p>@Html.Raw(Html.Encode(Model.description).Replace("\n", "</p><p>"))</p>
+        </div>
+    }
+
+</div>
+
+
+
+
+

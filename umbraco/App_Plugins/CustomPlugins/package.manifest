@@ -1,0 +1,126 @@
+﻿{
+  "gridEditors": [
+    {
+
+      "name": "Team Member",
+      "alias": "pTeam",
+      "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
+      "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
+      "icon": "icon-item-arrangement",
+      "config": {
+        "allowedDocTypes": ["TeamMember"],
+        "enablePreview": true,
+        "viewPath": "/Views/Partials/"
+      }
+    },
+    {
+      "name": "Pricing Table",
+      "alias": "pricingTableWidget",
+      "icon": "icon-coin-euro",
+      "view": "/App_Plugins/CustomPlugins/widgets/pricing/pricing.html",
+      "render": "/App_Plugins/CustomPlugins/widgets/pricing/pricingRender.cshtml"
+    },
+    {
+      "name": "Team",
+      "alias": "cTeam",
+      "icon": "icon-coin-euro",
+      "view": "/App_Plugins/CustomPlugins/widgets/team/team.html",
+      "render": "/App_Plugins/CustomPlugins/widgets/team/team.cshtml"
+    },
+    {
+      "name": "Heading (h1)",
+      "alias": "cpHeading",
+      "icon":"icon-coin",
+      "view": "textstring",
+      "config": {
+        "style": "font-size: 34px; line-height: 38px; font-weight: 200",
+        "markup": "<h1 class='mdl-typography--display-1'>#value#</h1>"
+      }
+    },
+    {
+      "name": "Headline (h2)",
+      "alias": "cpHeadline",
+      "icon":"icon-coin",
+      "view": "textstring",
+      "config": {
+        "style": "font-size: 34px; line-height: 38px; font-weight: 200",
+        "markup": "<h2 class='mdl-typography--display-1'>#value#</h2>"
+      }
+    },
+    {
+      "name": "SubHeadline (h3)",
+      "alias": "cpSubHeadline",
+      "icon":"icon-coin",
+      "view": "textstring",
+      "config": {
+        "style": "font-size: 24px; line-height: 28px; font-weight: 200",
+        "markup": "<h3 class='mdl-typography--headline'>#value#</h3>"
+      }
+    },
+    {
+      "name": "SubSubHeadline (h4)",
+      "alias": "cpSubSubHeadline",
+      "icon":"icon-coin",
+      "view": "textstring",
+      "config": {
+        "style": "font-size: 20px; line-height: 24px; font-weight: 200",
+        "markup": "<h4 class='mdl-typography--title'>#value#</h4>"
+      }
+    },
+    {
+      "name": "Caption (h6)",
+      "alias": "cpCaption",
+      "icon": "icon-coin",
+      "view": "textstring",
+      "config": {
+        "style": "font-size: 12px; line-height: 14px; font-weight: 200",
+        "markup": "<h4 class='mdl-typography--caption'>#value#</h4>"
+      }
+    },
+    {
+      "name": "Image (1000x500px)",
+      "alias": "blogMedia",
+      "view": "media",
+      "icon": "icon-picture",
+      "config": {
+        "size": {
+          "width": 1000,
+          "height": 500
+        }
+      }
+    }
+  ],
+  "propertyEditors": [
+    {
+      "name": "Char Limiter",
+      "alias": "charLimiter",
+      "editor": {
+        "view": "/App_Plugins/CustomPlugins/propertyEditors/charLimiter.html"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Number of Characters",
+            "description": "Number of max allowed characters in a field",
+            "key": "charLimit",
+            "view": "number"
+          }
+        ]
+      }
+    }
+  ],
+  "javascript": [
+    "/App_Plugins/CustomPlugins/propertyEditors/charLimiterController.js",
+    "/App_Plugins/CustomPlugins/directives/mdInputDirective.js",
+    "/App_Plugins/CustomPlugins/elements/mdInput/mdPanelDirective.js",
+    "/App_Plugins/CustomPlugins/widgets/widgetsController.js",
+    "/App_Plugins/CustomPlugins/elements/dynamicField/mdFieldDynamicController.js",
+    "/App_Plugins/CustomPlugins/elements/dynamicField/mdFieldDynamicDirective.js",
+    "/App_Plugins/CustomPlugins/elements/mdImagePicker/mdImagePickerController.js",
+    "/App_Plugins/CustomPlugins/elements/mdImagePicker/mdImagePickerDirective.js"
+
+  ],
+  "css":[
+"/App_Plugins/CustomPlugins/styles/backOfficeStyles.css"
+  ]
+}

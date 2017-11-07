@@ -1,0 +1,24 @@
+<md-panel ng-controller="customWidgetsController">
+    <md-input
+            ng-model="control.title"
+            placeholder="title">
+    </md-input>
+    <md-input
+            ng-model="control.price"
+            placeholder="price"
+            input-style="heading">
+    </md-input>
+    <md-input
+            ng-model="control.currency"
+            placeholder="currency"></md-input>
+    <md-input
+            ng-model="control.description"
+            type="text"
+            placeholder="short description">
+            </md-input>
+    <div>Features:</div>
+    <md-field-dynamic
+            ng-model="control.features"
+            placeholder="feature">
+    </md-field-dynamic>
+</md-panel>

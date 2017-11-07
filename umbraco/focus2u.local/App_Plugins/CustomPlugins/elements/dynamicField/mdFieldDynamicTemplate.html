@@ -1,0 +1,39 @@
+<div>
+    <table class="md-dynamic-table">
+        <tbody>
+        <tr class="row" ng-repeat="val in ngModel track by $index">
+            <td class="controls">
+                <a href style="color:rgb(83, 169, 63)"
+                   ng-click="vm.moveUp($index)"
+                   class="icon icon-arrow-up"
+                   ng-hide="$index==0">
+                </a>
+
+                <a href style="color:rgb(83, 169, 63)"
+                   ng-click="vm.moveDown($index)"
+                   class="icon icon-arrow-down"
+                   ng-hide="$index==ngModel.length-1">
+                </a>
+            </td>
+            <td class="value">
+                {{val}}
+            </td>
+            <td class="controls">
+                <a href ng-click="vm.remove($index)" class="icon icon-delete red"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td class="md-dynamic-table--input">
+                <input type="text" ng-model="inputVal" placeholder="Write {{placeholder}} here.."/>
+            </td>
+            <td>
+                <a class="btn" ng-click="vm.add(inputVal)">Add</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

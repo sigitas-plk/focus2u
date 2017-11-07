@@ -1,0 +1,22 @@
+html
+    head
+
+        link(rel="stylesheet" href="css/styles.css")
+    body
+        .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+            -var links =["Products","Pricing","About Us","Contact Us"];
+            header.mdl-layout__header
+                .mdl-layout__header-row
+                    .mdl-layout-spacer
+                    nav.mdl-navigation
+                        for link in links
+                            a(href="").mdl-navigation__link #{link}
+            .mdl-layout__drawer
+                .mdl-layout-title
+                    img(src="/img/src/logo.png").f2u-logo
+                nav.mdl-navigation
+                    for link in links
+                        a(href="").mdl-navigation__link #{link}
+            main.mdl-layout__content
+                .page-content
+                    block content
